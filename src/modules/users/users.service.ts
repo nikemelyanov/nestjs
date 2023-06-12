@@ -41,11 +41,11 @@ export class UsersService {
 
   async updateUser(email: string, dto: UpdateUserDTO): Promise<UpdateUserDTO> {
     await this.userRepository.update(dto, { where: { email: email } });
-    return dto
+    return dto;
   }
 
   async deleteUser(email: string) {
-    await this.userRepository.destroy({where: {email: email}})
-    return true
+    await this.userRepository.destroy({ where: { email: email } });
+    return true;
   }
 }
